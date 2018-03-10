@@ -1,0 +1,30 @@
+{
+  "name": "ATXNewScraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trobe026/ATXNewScraper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trobe026/ATXNewScraper/issues"
+  },
+  "homepage": "https://github.com/trobe026/ATXNewScraper#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mongojs": "^2.5.0",
+    "mongoose": "^5.0.9",
+    "npm": "^5.7.1",
+    "request": "^2.83.0"
+  }
+}
