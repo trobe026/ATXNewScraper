@@ -4,11 +4,13 @@ var Schema = mongoose.Schema;
 var HeadlineSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   body: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   link: {
     type: String,
@@ -17,6 +19,11 @@ var HeadlineSchema = new Schema({
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
+  },
+  saved: {
+    type: Boolean,
+    required: true,
+    default: false
   }
 });
 
