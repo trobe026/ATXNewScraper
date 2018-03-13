@@ -99,18 +99,39 @@ $(window).on('load', function() {
       $('#notes').append("<input id='notetitle' name='title'>");
       $('#notes').append("<textarea id='notebody' name='body'></textarea>");
       $('#notes').append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
-      if (data.note) {
+      if (data.notes.length > 0) {
         console.log('test1');
-        $('#notetitleSaved').html(`<h2>${data.note.title}</h2>`);
-        $('#notebodySaved').html(`<h2>${data.note.body}</h2>`);
+        for (var i = 0;i < data.notes.length; i++) {
+          if (i === 0) {
+            $('#savedNotes').append(`<thead><tr><th></th><th>Note Title</th><th>Note Text</th><th>Delete Note</th></tr></thead>`);
+          }
+            $('#savedNotes').append(`<tbody><tr class='tdata'><td>Note #${i+1}:<td>${data.notes[i].title}</td><td>${data.notes[i].body}</td><td align='center'><button type="button"><em class='glyphicon glyphicon-remove-circle' data-id=${data.notes[i]._id}></em></button></td></tr></tbody>`);
+        }
       } else {
         console.log('test2')
-        $('#notetitleSaved').empty();
-        $('#notebodySaved').empty();
+        $('#savedNotes').empty();
       }
+
+      $('.glyphicon-remove-circle').on('click', function() {
+        console.log($(this).data('id'));
+        let noteId = $(this).data('id');
+        $.ajax({
+          method: "PUT",
+          url:'/notes/' + noteId
+        })
+        .then(function(data) {
+          console.log(data);
+        });
+        $(this).closest('tr').remove();
+      });
+
     });
+    $('#savedNotes').empty();
     $("#notes").empty();
     $(".modal-header2").empty();
+
+
+
   });
 
 
@@ -141,4 +162,8 @@ $(document).on("click", "#savenote", function() {
       $("#notebody").val("");
     });
   });
+
+
+
+
 });

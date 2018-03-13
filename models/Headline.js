@@ -16,10 +16,12 @@ var HeadlineSchema = new Schema({
     type: String,
     required: true
   },
-  note: {
-    type: Schema.Types.ObjectId,
-    ref: "Note"
-  },
+  notes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Note"
+    }
+  ],
   saved: {
     type: Boolean,
     required: true,

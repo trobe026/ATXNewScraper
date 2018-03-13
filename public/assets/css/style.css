@@ -213,6 +213,15 @@ a .btn-info {
     color: white;
 }
 
+.glyphicon-thumbs-up {
+  font-size: 3vw;
+
+}
+
+.glyphicon-thumbs-down {
+  font-size: 3vw;
+}
+
 #notes {
   display: inline-grid;
   color: black;
@@ -220,4 +229,16 @@ a .btn-info {
 #notes textarea {
   width: 20vw;
   height: 20vh;
+}
+
+#savedNotes td {
+  background-color: white;
+}
+
+#savedNotes th {
+  text-align: center;
+}
+
+#savedNotes em {
+  color: red;
 }
