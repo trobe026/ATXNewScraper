@@ -96,6 +96,13 @@ span {
   margin-top: 250px;
 }
 
+.panel-heading img {
+  display:block;
+  width: 35%;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
 
 /* footer css */
 

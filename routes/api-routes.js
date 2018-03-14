@@ -4,14 +4,22 @@ var cheerio = require("cheerio");
 
 
 module.exports = function(app) {
+
   app.get('/scrape', function(req, res) {
-    request('https://kxan.com', function(err, resp, html) {
+    request('http://www.kxan.com', function(err, resp, html) {
+      console.log(html);
       var $ = cheerio.load(html);
       var results = {};
-      $(".media-object").each(function(i, element) {
-        results.title = $(element).find('.entry-title').children('a').text();
-        results.body = $(element).children('.entry-summary').children('p').text();
-        results.link = $(element).find('.entry-title').children('a').attr('href');
+      $('#p_p_id_56_INSTANCE_3234_ li').each(function(i, element) {
+        var imgUrl = $(element).find('figure').attr('style');
+        results.img = imgUrl.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+        results.title = $(element).find('.headline').children('a').text();
+        results.body = $(element).find('.headline-wrapper').children('p').text();
+        results.link = 'http://www.kxan.com' + $(element).find('.image-wrapper').children('a').attr('href');
+
+        if (results.body === '') {
+          results.body = "Whoops! Looks like this article has no body. Click the link!"
+        }
 
         db.Headline.create(results)
         .then(function(dbStory) {
