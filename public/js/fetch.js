@@ -25,10 +25,9 @@ $(window).on('load', function() {
     });
     console.log('test')
     console.log(id);
-    $(this).attr('class', 'btn btn-danger');
+    $(this).attr('class', 'btn btn-info');
     $(this).attr('id', 'delete');
     $(this).text("Saved!");
-    location.reload();
   });
 
   $('.delete').on('click', function() {
@@ -95,7 +94,7 @@ $(window).on('load', function() {
     })
     .then(function(data) {
       console.log(data);
-      $('.modal-header2').append(`<h2>${data.title}</h2><span class="close">&times;</span>`);
+      $('.modal-header2').append(`<span class="close">&times;</span><h2>${data.title}</h2>`);
       $('#notes').append("<input id='notetitle' name='title'>");
       $('#notes').append("<textarea id='notebody' name='body'></textarea>");
       $('#notes').append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");

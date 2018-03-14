@@ -157,7 +157,7 @@ a .btn-info {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -195,40 +195,62 @@ a .btn-info {
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header h2  {
-    /* background-color: #F6F6F6; */
-    color: black;
-}
-
 .modal-header2 {
   color: black;
+  border-bottom: 2px solid black;
 }
 
+
 .modal-body {
-  padding: 2px 16px;
   color: black;
 }
 
 .modal-footer {
-    padding: 2px 16px;
-    background-color: rgba(3, 1, 2, 0.9);
+    margin-top: 20px;
+    background-color: rgba(0, 119, 190, 0.7);
+    color: black;
+}
+
+h3 button {
+  margin: 0 25px;
+}
+
+/* remove article modal */
+
+.modal-header  {
+    background-color: black;
     color: white;
 }
 
 .glyphicon-thumbs-up {
   font-size: 3vw;
+  color: green;
 
 }
 
 .glyphicon-thumbs-down {
   font-size: 3vw;
+  color:red;
 }
 
+.glyphicon-eye-open {
+  color: lightgreen;
+}
+
+.glyphicon-link {
+  color: lightblue
+}
+
+.glyphicon-wrench {
+  color: lightyellow;
+}
+
+/* Notes modal */
 #notes {
   display: inline-grid;
   color: black;
