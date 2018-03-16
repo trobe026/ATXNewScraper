@@ -15,6 +15,7 @@ html, body {
   padding: 60px 0;
   max-width: 100%;
   background-color: rgba(23, 21, 22, 0.7);
+  font-family: 'IBM Plex Serif', serif;
 }
 
 #h1 {
@@ -68,16 +69,17 @@ html, body {
     background-size: cover;
 }
 
-/* scraped articles panel css */
-
 .panel-table, .panel > .panel-heading {
   font-size: 1.1vw;
   color: #F6F6F6;
   background-color: rgba(23, 21, 22, 0.9);
+  font-family: 'Mina', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 td {
   background-color: #171516;
+  font-family: 'IBM Plex Serif', serif;
 }
 
 span {
@@ -90,6 +92,7 @@ span {
 
 .panel > .panel-body th {
   text-align: center;
+  font-family: 'Merriweather', serif;
 }
 
 .panel:first-child {
@@ -254,6 +257,7 @@ h3 button {
 #notes {
   display: inline-grid;
   color: black;
+  font-family: 'Libre Baskerville', serif;
 }
 #notes textarea {
   width: 20vw;
@@ -262,10 +266,12 @@ h3 button {
 
 #savedNotes td {
   background-color: white;
+  font-family: 'Libre Baskerville', serif;
 }
 
 #savedNotes th {
   text-align: center;
+
 }
 
 #savedNotes em {
